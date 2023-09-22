@@ -1,0 +1,56 @@
+<div class="w-screen sm:w-screen md:w-screen lg:w-screen h-64 bg-gray-300 text-center">
+ <div>
+    <h1>{{clickedMov.original_title}}</h1>
+    <p>Today,30 Aug 10:30 PM Crown Thetre Dolby Atoms, Calicut</p>
+
+    <h1>Wed</h1>
+    <h1>30 Aug</h1>
+
+    <button class="w-28 h-16 rounded-lg bg-blue-400 font-bold text-white">10:30 PM</button>
+ </div>
+</div>
+
+<div class="flex flex-row mt-[-100px]snap-proximity snap-x justify-center">
+  <!-- ************first s row ************** -->
+  <div class="p-10 w-screen flex items-center justify-center sm:w-screen md:w-screen lg:w-screen absolute top-[350px] -left-[580px] lg:-rotate-45 snap-center ">
+    <div class="flex flex-col gap-5 p-10 mt-8 text-[20px]"><p>A</p> <p>B</p> <p>C</p> <p>D</p> <p>E</p> <p>F</p></div>
+    <div class="grid grid-cols-6 content-center   w-[350px] h-[500px]">
+        <div *ngFor="let i of seatArr2">  
+            <button  (click)="clikbtn($event)"  class="w-8 h-8 bg-white mt-5 rounded-md border-2 border-blue-300 hover:bg-blue-400">{{i.column}}</button>
+        </div>
+    </div>
+  </div>
+
+<!-- ************second b row ************** -->
+    <div class="p-5 w-screen flex items-center justify-center sm:w-screen md:w-screen lg:w-screen absolute top-[200px] left-0 z-10 snap-start ">
+      <div class="flex flex-col gap-5 p-5 mt-8 text-[20px]"><p>A</p> <p>B</p> <p>C</p> <p>D</p> <p>E</p> <p>F</p></div>
+      <div class="grid grid-cols-10 content-center   w-[600px] h-[500px]">
+          <div *ngFor="let i of seatArr">  
+              <button  (click)="clikbtn($event)"  class="w-8 h-8 bg-white mt-5 rounded-md border-2 border-blue-300 hover:bg-blue-400">{{i.column}}</button>
+          </div>
+      </div>
+  </div>
+
+  <!-- ************third b row ************** -->
+  <div class="p-10 w-screen flex items-center justify-center sm:w-screen md:w-screen lg:w-screen absolute top-[330px] left-[550px] lg:rotate-45 snap-center ">
+    <div class="flex flex-col gap-5 p-8 mt-8 text-[20px]"><p>A</p> <p>B</p> <p>C</p> <p>D</p> <p>E</p> <p>F</p></div>
+    <div class="grid grid-cols-6 content-center   w-[350px] h-[500px]">
+        <div *ngFor="let i of seatArr3">  
+            <button  (click)="clikbtn($event)"  class="w-8 h-8 bg-white mt-5 rounded-md border-2 border-blue-300 hover:bg-blue-400">{{i.column}}</button>
+        </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="w-screen h-52 flex items-center justify-center absolute top-[900px]">
+    <img class="w-[700px]" src="./../../../assets/screen.svg" alt="">
+</div>
+
+<ng-container *ngIf="showpay==true">
+  <div class="flex justify-center">
+    <button (click)="paynow()"  routerLink="/payment" class="w-[300px] absolute top-[260px] z-10 h-14 text-center bg-red-700 rounded-lg text-white">Book Ticket Rs.{{TcktGrandAmt}}</button>
+  </div>
+</ng-container>
+
